@@ -9,8 +9,8 @@ resource "azurerm_resource_group" "rg" {
 }
 
 resource "azurerm_storage_account" "storage" {
-
-  name                     = "arjunfdsdsafd3234"
+  count = 5
+  name                     = "${count.index}arjunfdsdsafd3234"
   resource_group_name      = local.resource_group_name
   location                 = local.location
   account_tier             = "Standard"
